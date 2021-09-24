@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+}
+html {
+  text-align: center;
+}
+.box {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 5px auto;
+  padding-bottom: 50px;
+}
+.displayBox {
+  border: 2px solid black;
+  flex: 30%;
+  min-height: 50px;
+  margin: 10px 20px;
+  width: 50px;
+}
+footer {
+  margin-top: 20px;
+  bottom: 0;
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+form {
+  width: 480px;
+  margin: 30px auto 20px auto;
+}
+form-btn {
+  float: right;
+  position: relative;
+  top: -20px;
+}
+input {
+  width: 100%;
+  font-size: 200%;
+  padding: 10px 20px;
+  border-width: 1px;
+}
+textarea {
+  width: 100%;
+  resize: none;
+  font-size: 150%;
+  border-top: 0;
+  padding: 10px 20px;
+}
+header {
+  background-color: burlywood;
+  font-size: 180%;
+  font-family: "Lobster", cursive;
+  text-align: start;
+  padding: 0px 0px 10px 20px;
+  box-shadow: 0 5px 10px 0;
+}
