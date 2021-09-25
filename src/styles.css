@@ -7,6 +7,7 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
+  background-color: #f55742;
 }
 html {
   text-align: center;
@@ -15,55 +16,82 @@ html {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 100%;
   margin: 5px auto;
   padding-bottom: 50px;
 }
 .displayBox {
   border: 2px solid black;
-  flex: 30%;
-  min-height: 50px;
+  border-radius: 10px;
+  min-height: 30px;
   margin: 10px 20px;
-  width: 50px;
+  width: 332px;
+  position: relative;
+  background-color: #9dc2b9;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
 }
 footer {
-  margin-top: 20px;
   bottom: 0;
   position: absolute;
   display: block;
   left: 0;
   right: 0;
-  padding: 10px;
-  background-color: antiquewhite;
+  padding: 20px;
+  background-color: #f54272;
+  box-shadow: 3px -3px black;
 }
 
 form {
-  width: 480px;
+  border-radius: 10px;
+  width: 500px;
   margin: 30px auto 20px auto;
-}
-form-btn {
-  float: right;
   position: relative;
-  top: -20px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+.form-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 input {
   width: 100%;
-  font-size: 200%;
-  padding: 10px 20px;
+  font-size: 190%;
+  padding: 10px 0px 10px 10px;
   border-width: 1px;
+  border-radius: 5px;
 }
 textarea {
   width: 100%;
   resize: none;
-  font-size: 150%;
+  font-size: 120%;
   border-top: 0;
-  padding: 10px 20px;
+  padding: 10px 0px 10px 10px;
+  border-radius: 5px;
 }
 header {
-  background-color: burlywood;
+  background-color: #8f3668;
   font-size: 180%;
-  font-family: "Lobster", cursive;
+  font-family: "Pacifico", cursive;
   text-align: start;
   padding: 0px 0px 10px 20px;
-  box-shadow: 0 5px 10px 0;
+  box-shadow: 5px 5px rgb(204, 89, 89);
+}
+.del-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#note-title {
+  font-family: "Satisfy", cursive;
+  padding: 10px;
+  background-color: #d1b382;
+}
+.note > p {
+  font-family: "Pacifico", cursive;
+  padding: 10px;
+}
+.edit-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

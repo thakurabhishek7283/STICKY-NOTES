@@ -4,6 +4,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 function CreateNote(props) {
   const [note, setNote] = useState({ title: "", content: "" });
+  const [isExpand, setExpand] = useState(false);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -13,52 +14,57 @@ function CreateNote(props) {
         [name]: value
       };
     });
+    if (!isExpand) setExpand(true);
   }
 
   function handleClick(event) {
     if (note.title && note.content) {
       props.addNote(note);
+      setExpand(!isExpand);
     }
 
     event.preventDefault();
     setNote({ title: "", content: "" });
   }
-  const [isExpand, setExpand] = useState(false);
+
   function expand() {
     setExpand(!isExpand);
   }
   return (
-    <form>
-      <input
-        onClick={expand}
-        onChange={handleChange}
-        name="title"
-        value={note.title}
-        type="text"
-        placeholder="Title"
-        required
-      />
-      {isExpand && (
-        <textarea
+    <div className="form-box">
+      <form>
+        <input
+          onClick={expand}
           onChange={handleChange}
-          name="content"
-          value={note.content}
-          placeholder="Note content"
-          cols="30"
-          rows="6"
+          name="title"
+          value={note.title}
+          type="text"
+          placeholder="Title"
           required
         />
-      )}
-
-      <Fab
-        id="form-btn"
-        color="secondary"
-        aria-label="add"
-        onClick={handleClick}
-      >
-        <AddIcon />
-      </Fab>
-    </form>
+        {isExpand && (
+          <textarea
+            onChange={handleChange}
+            name="content"
+            value={note.content}
+            placeholder="Note content"
+            cols="30"
+            rows="6"
+            required
+          />
+        )}
+        <div className="form-btn">
+          <Fab
+            id="form-btn"
+            color="secondary"
+            aria-label="add"
+            onClick={handleClick}
+          >
+            <AddIcon />
+          </Fab>
+        </div>
+      </form>
+    </div>
   );
 }
 
