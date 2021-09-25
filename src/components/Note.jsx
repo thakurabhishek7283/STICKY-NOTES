@@ -6,13 +6,11 @@ function Note(props) {
   function handleDelete() {
     props.delete(props.id);
   }
-  function handleEdit() {
-    props.edit(props.id);
-  }
+
   return (
     <div className="displayBox" id={props.id}>
       <div className="edit-btn">
-        <IconButton aria-label="edit" onClick={handleEdit}>
+        <IconButton aria-label="edit">
           <EditIcon />
         </IconButton>
       </div>
