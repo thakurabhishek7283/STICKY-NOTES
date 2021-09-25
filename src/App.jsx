@@ -1,9 +1,10 @@
 import "./styles.css";
 import React, { useState } from "react";
-import CreateNote from "./components/CreateNote";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Note from "./components/Note";
+import CreateNote from "./components/CreateNewNote/CreateNote";
+import Header from "./components/HeaderFooter/Header";
+import Footer from "./components/HeaderFooter/Footer";
+import Note from "./components/DisplayNote/Note";
+import EditNote from "./components/EditExistingNote/EditForm";
 
 function App() {
   const [noteArr, expandArr] = useState([]);
@@ -21,6 +22,20 @@ function App() {
     });
   }
 
+  function handleEditControl(note, id) {
+    addNote(note);
+    deleteNote(id);
+  }
+
+  function editNote(id) {
+    const note = noteArr.find((note, index) => {
+      return id === index;
+    });
+    return (
+      <EditNote id={id} note={note} handleEditControl={handleEditControl} />
+    );
+  }
+
   return (
     <div className="App">
       <Header />
@@ -29,10 +44,12 @@ function App() {
         {noteArr.map((arr, index) => {
           return (
             <Note
+              key={index}
               title={arr.title}
               content={arr.content}
               id={index}
               delete={deleteNote}
+              edit={editNote}
             />
           );
         })}

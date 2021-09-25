@@ -1,3 +1,4 @@
+import "./CreateNote.css";
 import React, { useState } from "react";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
@@ -31,35 +32,33 @@ function CreateNote(props) {
     setExpand(!isExpand);
   }
   return (
-    <div className="form-box">
+    <div className="create-note-form-box">
       <form>
-        <input
-          onClick={expand}
-          onChange={handleChange}
-          name="title"
-          value={note.title}
-          type="text"
-          placeholder="Title"
-          required
-        />
-        {isExpand && (
-          <textarea
+        <div className="create-note-form-input">
+          <input
+            onClick={expand}
             onChange={handleChange}
-            name="content"
-            value={note.content}
-            placeholder="Note content"
-            cols="30"
-            rows="6"
+            name="title"
+            value={note.title}
+            type="text"
+            placeholder="Title"
             required
           />
-        )}
-        <div className="form-btn">
-          <Fab
-            id="form-btn"
-            color="secondary"
-            aria-label="add"
-            onClick={handleClick}
-          >
+          {isExpand && (
+            <textarea
+              onChange={handleChange}
+              name="content"
+              value={note.content}
+              placeholder="Note content"
+              cols="30"
+              rows="6"
+              required
+            />
+          )}
+        </div>
+
+        <div className="create-note-form-btn">
+          <Fab color="secondary" aria-label="add" onClick={handleClick}>
             <AddIcon />
           </Fab>
         </div>

@@ -1,0 +1,29 @@
+.note-container {
+  border: 2px solid black;
+  border-radius: 10px;
+  min-height: 30px;
+  margin: 10px 20px;
+  width: 332px;
+  position: relative;
+  background-color: #9dc2b9;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+.note-edit-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.note-del-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#note-title {
+  font-family: "Satisfy", cursive;
+  padding: 10px;
+  background-color: #d1b382;
+}
+#note-content {
+  font-family: "Pacifico", cursive;
+  padding: 10px;
+}

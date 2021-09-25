@@ -20,16 +20,7 @@ html {
   margin: 5px auto;
   padding-bottom: 50px;
 }
-.displayBox {
-  border: 2px solid black;
-  border-radius: 10px;
-  min-height: 30px;
-  margin: 10px 20px;
-  width: 332px;
-  position: relative;
-  background-color: #9dc2b9;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
-}
+
 footer {
   bottom: 0;
   position: absolute;
@@ -41,33 +32,6 @@ footer {
   box-shadow: 3px -3px black;
 }
 
-form {
-  border-radius: 10px;
-  width: 500px;
-  margin: 30px auto 20px auto;
-  position: relative;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
-}
-.form-btn {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-input {
-  width: 100%;
-  font-size: 190%;
-  padding: 10px 0px 10px 10px;
-  border-width: 1px;
-  border-radius: 5px;
-}
-textarea {
-  width: 100%;
-  resize: none;
-  font-size: 120%;
-  border-top: 0;
-  padding: 10px 0px 10px 10px;
-  border-radius: 5px;
-}
 header {
   background-color: #8f3668;
   font-size: 180%;
@@ -75,23 +39,4 @@ header {
   text-align: start;
   padding: 0px 0px 10px 20px;
   box-shadow: 5px 5px rgb(204, 89, 89);
-}
-.del-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-#note-title {
-  font-family: "Satisfy", cursive;
-  padding: 10px;
-  background-color: #d1b382;
-}
-.note > p {
-  font-family: "Pacifico", cursive;
-  padding: 10px;
-}
-.edit-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
