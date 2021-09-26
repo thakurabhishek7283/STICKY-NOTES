@@ -1,3 +1,4 @@
+import "./EditForm.css";
 import { useState } from "react";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
@@ -12,23 +13,26 @@ function EditForm(props) {
     });
   }
 
-  function handleClick() {
-    props.handleEditControl(note, props.id);
+  function handleClick(event) {
+    event.preventDefault();
+    if (note.title && note.content) {
+      props.handleEditControl(note, props.id);
+    }
   }
 
   return (
     <div className="edit-note-form">
-      <form>
+      <form className="edit-form">
         <input
           value={note.title}
           onChange={handleChange}
           type="text"
-          name="note.title"
+          name="title"
         />
         <textarea
           value={note.content}
           onChange={handleChange}
-          name="note.content"
+          name="content"
           cols="30"
           rows="10"
         />
