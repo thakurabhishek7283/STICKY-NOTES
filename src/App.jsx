@@ -8,7 +8,9 @@ import EditNote from "./components/EditExistingNote/EditForm";
 
 function App() {
   const [noteArr, expandArr] = useState([]);
-
+  const [noteId, setNoteId] = useState(null);
+  const [note, setNote] = useState(null);
+  const [active, setActive] = useState(false);
   function addNote(note) {
     expandArr((prevValue) => {
       return [...prevValue, note];
@@ -23,22 +25,30 @@ function App() {
   }
 
   function handleEditControl(note, id) {
-    addNote(note);
     deleteNote(id);
+    addNote(note);
+    setActive(false);
   }
 
   function editNote(id) {
     const note = noteArr.find((note, index) => {
       return id === index;
     });
-    return (
-      <EditNote id={id} note={note} handleEditControl={handleEditControl} />
-    );
+    setNoteId(id);
+    setNote(note);
+    setActive(true);
   }
 
   return (
     <div className="App">
       <Header />
+      {active && (
+        <EditNote
+          id={noteId}
+          note={note}
+          handleEditControl={handleEditControl}
+        />
+      )}
       <CreateNote addNote={addNote} />
       <div className="box">
         {noteArr.map((arr, index) => {
